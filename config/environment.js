@@ -6,6 +6,21 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: "AIzaSyAquFwsEpA6gWNuBj8kzzbp1tLoHHtef8U",
+      authDomain: "ember-lib-app-67d59.firebaseapp.com",
+      databaseURL: "https://ember-lib-app-67d59.firebaseio.com",
+      projectId: "ember-lib-app-67d59",
+      storageBucket: "ember-lib-app-67d59.appspot.com",
+      messagingSenderId: "292924323927"
+    },
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -20,7 +35,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
   };
 
   if (environment === 'development') {
@@ -49,3 +64,27 @@ module.exports = function(environment) {
 
   return ENV;
 };
+
+/*
+Example:
+
+// config/environment.js
+var ENV = {
+locationType: 'auto',
+// ...
+firebase: {
+  apiKey: 'xyz',
+  authDomain: 'YOUR-FIREBASE-APP.firebaseapp.com',
+  databaseURL: 'https://YOUR-FIREBASE-APP.firebaseio.com',
+  storageBucket: 'YOUR-FIREBASE-APP.appspot.com',
+},
+
+
+// if using ember-cli-content-security-policy
+contentSecurityPolicy: {
+  'script-src': "'self' 'unsafe-eval' apis.google.com",
+  'frame-src': "'self' https://*.firebaseapp.com",
+  'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+},
+
+*/

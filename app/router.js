@@ -20,6 +20,9 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: '/:library_id/edit'})
   });
+
+  this.route('authors');
+  this.route('books');
 });
 
 // by default index route and controller is created, need only index page

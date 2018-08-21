@@ -56,3 +56,19 @@ Make use of the many generators for code, try `ember help generate` for more det
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+
+
+Sample test:
+
+// search string starts with
+export default function filterListStartsWith(list, filterString) {
+  let filter = new RegExp('^'.concat(escapeForRegex(filterString)), 'i');
+  return list.filter((element) => filter.test(element.name));
+}
+
+function escapeForRegex(str) {
+  // see https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
